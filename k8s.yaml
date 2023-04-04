@@ -14,21 +14,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: supperApp
+  name: superApp
   labels:
-    app: supperApp
+    app: superApp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: supperApp
+      app: superApp
   template:
     metadata:
       labels:
-        app: supperApp
+        app: superApp
     spec:
       containers:
-      - name: supperApp
+      - name: superApp
         image: svikyrychenko/super-app
         resources:
           limits:
