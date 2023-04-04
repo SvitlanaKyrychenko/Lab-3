@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: supperApp
+spec:
+  type: LoadBalancer
+  selector:
+    app: supperApp
+  ports:
+    - protocol: TCP
+      port: 3333
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supperApp
+  labels:
+    app: supperApp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: supperApp
+  template:
+    metadata:
+      labels:
+        app: supperApp
+    spec:
+      containers:
+      - name: supperApp
+        image: svikyrychenko/super-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3000
