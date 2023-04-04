@@ -1,5 +1,5 @@
 {
-  "name": "superapp1",
+  "name": "superapp",
   "version": "1.0.0",
   "description": "App to train in creation docker files",
   "main": "server.js",
