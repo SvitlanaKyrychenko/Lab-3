@@ -1,10 +1,10 @@
 FROM node:16
 WORKDIR /usr/src/app
 
-COPY /superapp/package*.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY /superapp/ ./
+COPY . .
 
 EXPOSE 3000
 
