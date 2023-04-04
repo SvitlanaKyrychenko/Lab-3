@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: superApp
+  name: superapp
 spec:
   type: LoadBalancer
   selector:
-    app: superApp
+    app: superapp
   ports:
     - protocol: TCP
       port: 3333
@@ -14,21 +14,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: superApp
+  name: superapp
   labels:
-    app: superApp
+    app: superapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: superApp
+      app: superapp
   template:
     metadata:
       labels:
-        app: superApp
+        app: superapp
     spec:
       containers:
-      - name: superApp
+      - name: superapp
         image: svikyrychenko/super-app
         resources:
           limits:
